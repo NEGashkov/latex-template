@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english, russian]{babel}                                            % Пакет позволяет использовать английский и русский языки в документе.
+\usepackage{caption}                                                            % Пакет позволяет добавлять корректные подписи к таблицам, графикам и.т.д.
+\usepackage[T2A]{fontenc}                                                       % Пакет изменяет кодировку шрифтов документа.
+\usepackage[left=3cm, top=2cm, right=1cm, bottom=2cm]{geometry}                 % Пакет позволяет управлять шириной полей документа.
+\usepackage{gensymb}                                                            % Пакет позволяет использовать симвал градуса.
+\usepackage{graphicx}                                                           % Пакет позволяет вставлять рисунки в документ.
+\usepackage[utf8]{inputenc}                                                     % Пакет изменяет кодировку документа.
+\usepackage{indentfirst}                                                        % Пакет добавляет "красную строку" в первый абзац после заголовков.
+\usepackage{listings}                                                           % Пакет позволяет использовать листинги.
+\usepackage{lscape}                                                             % Пакет позволяет менять ориентацию отдельной страницы.
+\usepackage{multirow}                                                           % Пакет позволяет объединять ячейки таблицы.
+\usepackage{pgfgantt}                                                           % Пакет позволяет рисовать диаграммы ганта.
+\usepackage{subfiles}                                                           % Пакет позволяет разнести документ по отдельным файлам.
+\usepackage{textcomp}                                                           % Пакет позволяет использовать символ "№" в документе.
+\usepackage[nottoc, notlof, notlot]{tocbibind}                                  % Пакет позволяет добавить "Список литературы" в оглавление.
+\usepackage{tocloft}                                                            % Пакет изменяет стиль оглавления в документе.
+\usepackage{tabularx}                                                           % Пакет позволяет использовать более сложные таблицы.
+\usepackage{wrapfig}                                                            % Пакет позволяет настраивать обтекание рисунков текстом.
+\usepackage{url}                                                                % Пакет позволяет оборачивать URL в контейнеры.
+
+\renewcommand{\bfdefault}{b}                                                    % Команда переопределяет внешний вид полужирного шрифта.
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}                           % Команда переопределяет стиль оглавления в документе.
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}                                     % Блок команд переопределяют стиль вложенных нумерованных списков на "1.1.1." и.т.д.
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}                    %
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}  %
+\renewcommand{\theenumi}{\arabic{enumi}.}                                       %
+\renewcommand{\theenumii}{.\arabic{enumii}.}                                    %
+\renewcommand{\theenumiii}{.\arabic{enumiii}.}                                  %
+
+\lstset{                                                                        % Команда переопределяет стиль листинга для языка C++, добавляет цвета для комментариев,
+    language=C++,                                                               % позволяет использовать перенос слов.
+    keywordstyle=\color{blue}\ttfamily,                                         %
+    stringstyle=\color{red}\ttfamily,                                           %
+    commentstyle=\color{green}\ttfamily,                                        %
+    morecomment=[l][\color{magenta}]{\#}                                        %
+    basicstyle=\small\ttfamily,                                                 %
+    columns=flexible,                                                           %
+    breaklines=true                                                             %
+}
+
+\graphicspath{{../../images/}}                                                  % Команда определяет путь к расположению рисунков.
+\setcounter{page}{0}                                                            % Команда позволяет начать нумерацию страниц с нуля.
+
+
+\begin{document}
+
+    \subfile{../title_page/title_page}
+    \tableofcontents
+    \subfile{../aims/aims}
+    \subfile{../methods/methods}
+    \subfile{../results/results}
+    \subfile{../conclusions/conclusions}
+    \subfile{../attachments/attachments}
+    \subfile{../listings/listings}
+    \subfile{../references/references}
+
+\end{document}

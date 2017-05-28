@@ -1,0 +1,8 @@
+# Ignore special files.
+*~
+.*
+
+# Keep this .gitignore and .gitkeep files. .gitkeep used for committing empty
+# directories, when defining repository structure.
+!.gitignore
+!.gitkeep
