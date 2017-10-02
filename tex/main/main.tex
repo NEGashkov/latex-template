@@ -2,6 +2,7 @@
 
 \usepackage[english, russian]{babel}                                            % Пакет позволяет использовать английский и русский языки в документе.
 \usepackage{caption}                                                            % Пакет позволяет добавлять корректные подписи к таблицам, графикам и.т.д.
+\usepackage{color}                                                              % Пакет добавляет декларативное описание собственных цветов.
 \usepackage[T2A]{fontenc}                                                       % Пакет изменяет кодировку шрифтов документа.
 \usepackage[left=3cm, top=2cm, right=1cm, bottom=2cm]{geometry}                 % Пакет позволяет управлять шириной полей документа.
 \usepackage{gensymb}                                                            % Пакет позволяет использовать симвал градуса.
@@ -30,19 +31,46 @@
 \renewcommand{\theenumii}{.\arabic{enumii}.}                                    %
 \renewcommand{\theenumiii}{.\arabic{enumiii}.}                                  %
 
-\lstset{                                                                        % Команда переопределяет стиль листинга для языка C++, добавляет цвета для комментариев,
-    language=C++,                                                               % позволяет использовать перенос слов.
-    keywordstyle=\color{blue}\ttfamily,                                         %
-    stringstyle=\color{red}\ttfamily,                                           %
-    commentstyle=\color{green}\ttfamily,                                        %
-    morecomment=[l][\color{magenta}]{\#}                                        %
-    basicstyle=\small\ttfamily,                                                 %
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10}                                    % Блок команд добавляет моноширинный шрифт с поддержкой полужирного написания.
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}                                     %
+
+\definecolor{deepblue}{rgb}{0,0,0.5}                                            % Блок команд определяет дополнительные цвета.
+\definecolor{deepred}{rgb}{0.6,0,0}                                             %
+\definecolor{deepgreen}{rgb}{0,0.5,0}                                           %
+\definecolor{regulargray}{rgb}{0.5,0.5,0.5}                                     %
+
+\newcommand\pythonstyle{\lstset{                                                % Создание команды \pythonstyle для описания листинга с синтаксисом Python. 
+    language=Python,                                                            %
+    basicstyle=\ttm,                                                            %
+    otherkeywords={self},                                                       %
+    keywordstyle=\color{deepblue}\ttb,                                          %
+    commentstyle=\color{regulargray}\ttm,                                       %
+    emphstyle=\color{deepred}\ttb,                                              %
+    stringstyle=\color{deepgreen}\ttm,                                          %
+    frame=tb,                                                                   %
+    showstringspaces=false,                                                     %
     columns=flexible,                                                           %
-    breaklines=true                                                             %
-}
+    breaklines=true,                                                            %
+    numbers=left,                                                               %
+    numbersep=5pt,                                                              %
+    numberstyle=\color{regulargray}\tiny                                        %
+}}                                                                              %
+
+\lstnewenvironment{python}[1][]                                                 % Определение окружения python для использования в листингах.
+{                                                                               %
+\pythonstyle                                                                    %
+\lstset{#1}                                                                     %
+}                                                                               %
+{}                                                                              %
+
+\newcommand\pythonexternal[2][]{{                                               % Позволяет подключать Python из внешних файлов с форматированием.
+\pythonstyle                                                                    %
+\lstinputlisting[#1]{#2}}}                                                      %
+
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}                       % Позволяет использовать Python-стиль "инлайн".
 
 \graphicspath{{../../images/}}                                                  % Команда определяет путь к расположению рисунков.
-\setcounter{page}{0}                                                            % Команда позволяет начать нумерацию страниц с нуля.
+\setcounter{page}{1}                                                            % Команда позволяет начать нумерацию страниц с нуля.
 
 
 \begin{document}
