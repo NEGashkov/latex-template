@@ -1,0 +1,65 @@
+\renewcommand*{\maketitle}{
+\begin{titlepage}
+  \centering
+  \textbf{
+    Министерство образования и науки Российской Федерации
+  }
+
+  {
+    ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ
+    ВЫСШЕГО ОБРАЗОВАНИЯ
+  }
+
+  \textbf{
+    <<Санкт-Петербургский национальный исследовательский университет
+    информационных технологий, механики и оптики>>
+  }
+
+  {
+    \@chair
+  }
+
+  \vfill
+
+  \textbf{
+    \@doctype
+  }
+
+  \textbf{
+    на тему
+  }
+
+  {
+    <<\@title>>
+  }
+
+  {
+    по дисциплине
+  }
+
+  \textbf{
+    <<\@subject>>
+  }
+
+
+  \ifthenelse{
+    \isempty{\@variation}
+  }{
+
+  }{
+    \textbf{\@variation}
+  }
+
+  \begin{flushright}
+    Выполнил: \@author
+
+    Проверил: \@supervisor
+  \end{flushright}
+
+  \vfill
+
+  Санкт-Петербруг --- \the\year
+\end{titlepage}
+}
+
+\endinput
