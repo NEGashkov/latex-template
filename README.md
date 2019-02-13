@@ -15,7 +15,7 @@ $ mv latex-template ~/texmf/tex/latex/local
 Make a `main.tex` file:
 
 ```tex
-\documentclass{n3article}
+\documentclass{n5article}
 
 \begin{document}
   Hello world!
