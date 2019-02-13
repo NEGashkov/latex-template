@@ -15,7 +15,7 @@ $ mv latex-template ~/texmf/tex/latex/local
 Make a `main.tex` file:
 
 ```tex
-\documentclass{n6article}
+\documentclass{n3article}
 
 \begin{document}
   Hello world!
@@ -47,7 +47,7 @@ If you want to customize variables such as author, subject, etc., create a
 ...and include it into `main.tex` file:
 
 ```tex
-\documentclass{n6article}
+\documentclass{n5article}
 
 \input{variables.sty}
 
