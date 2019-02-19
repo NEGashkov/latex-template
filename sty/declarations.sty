@@ -7,3 +7,8 @@
 \geometry{bottom=20mm}
 
 \bibliographystyle{unsrt}
+
+\newcommand{\sectionlike}[1]{
+  \section*{\centering \MakeUppercase{#1}}
+  \addcontentsline{toc}{section}{\MakeUppercase{#1}}
+}
