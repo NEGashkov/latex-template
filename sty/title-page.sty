@@ -5,14 +5,20 @@
     Министерство образования и науки Российской Федерации
   }
 
+  \bigskip
+
   {
     ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ
     ВЫСШЕГО ОБРАЗОВАНИЯ
   }
 
+  \bigskip
+
   \textbf{
     \@university
   }
+
+  \bigskip
 
   {
     \@chair
@@ -29,7 +35,7 @@
   }
 
   {
-    <<\@title>>
+    \@title
   }
 
   {
@@ -37,7 +43,7 @@
   }
 
   \textbf{
-    <<\@subject>>
+    \@subject
   }
 
 
@@ -49,10 +55,37 @@
     \textbf{\@variation}
   }
 
-  \begin{flushright}
-    Выполнил: \@author
+  \bigskip
 
-    Проверил: \@supervisor
+  \begin{flushright}
+    \textbf{
+      Выполнил:
+    }
+
+    \ifthenelse{
+      \isempty{\@authorgroup}
+    }{
+      \@author
+    }{
+      \@author, \\
+      \@authorgroup
+    }
+
+    \bigskip
+
+    \textbf{
+      Проверил:
+    }
+
+    \ifthenelse{
+      \isempty{\@supervisorposition}
+    }{
+      \@supervisor
+    }{
+      \@supervisor, \\
+      \@supervisorposition
+    }
+
   \end{flushright}
 
   \vfill
