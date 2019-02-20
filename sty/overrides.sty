@@ -1,17 +1,19 @@
+% Fonts.
 \renewcommand{\bfdefault}{b}
-
-\renewcommand\cellalign{tl}
-
 \renewcommand\theadfont{\bfseries}
 \renewcommand\theadalign{tl}
 
-\renewcommand{\@biblabel}[1]{#1.} 
+% Tables.
+\renewcommand{\arraystretch}{1.2}
+\renewcommand\cellalign{tl}
 
+% Gostes.
+\renewcommand{\@biblabel}[1]{#1.} 
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand\labelitemi{--}
+
+% Renames.
 \addto\captionsrussian{
   \renewcommand{\contentsname}{Оглавление}
   \renewcommand{\refname}{\centering СПИСОК ИСПОЛЬЗУЕМЫХ ИСТОЧНИКОВ}
 }
-
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-
-\renewcommand\labelitemi{--}

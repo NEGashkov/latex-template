@@ -8,7 +8,22 @@
 
 \bibliographystyle{unsrt}
 
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\captionsetup[table]{singlelinecheck=false}
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
 \newcommand{\sectionlike}[1]{
   \section*{\centering \MakeUppercase{#1}}
   \addcontentsline{toc}{section}{\MakeUppercase{#1}}
+}
+
+\newcommand{\centeredgrapics}[3]{
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{{#1}}
+    \caption{#2}
+    \label{#3}
+  \end{figure}
 }
