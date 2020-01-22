@@ -1,3 +1,8 @@
+<aside class="warning">
+This project is depricated, use the great https://github.com/kirillgashkov/gostarticle instead.
+</aside>
+
+
 # Latex Template
 
 Don't write boilerplate. Write articles.
